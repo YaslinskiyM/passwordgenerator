@@ -1,49 +1,49 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-var lowercaseChar = "abcdefghijklmnopqrstuvwxyz";
-var uppercaseChar = "ABCDEFGHIJKLMNOPQRSTUZWXYZ";
-var numericalChar = "0123456789";
-var specialChar = "!#$%&'()*+-./:;<=>?@[\^_`{|}~";
+var lowercaseChar = "abcdefghijklmnopqrstuvwxyz"; // creating the variable
+var uppercaseChar = "ABCDEFGHIJKLMNOPQRSTUZWXYZ"; //creating the variable
+var numericalChar = "0123456789"; //creating the variable
+var specialChar = "!#$%&'()*+-./:;<=>?@[\^_`{|}~"; //creating the variable
 
 function getRandom (str){
-return str[Math.floor(Math.random()*str.length)]
+return str[Math.floor(Math.random()*str.length)] //this function will return a string with a rounded, random number with certain length chosen
 
 }
 
 function  generatePassword( ) {
   var length = 0;
-  var password = ""
-  var passwordOptions = ""
+  var password = "" //these are left empty because we do not know what they will be 
+  var passwordOptions = "" //left empty because we do not know yet what they will be. 
   
-  while (length < 8 || length > 128 || isNaN(length)){
-    length = parseInt(prompt("How long would you like password to be?")) 
+  while (length < 8 || length > 128 || isNaN(length)){ //this is to prompt a PW more than 8 but less than 128 or if this is not uner that category is will be NAN
+    length = parseInt(prompt("How long would you like password to be? Must be more than 8 but less than 128 characters")) 
   }
 
-  var includeLowerChar = confirm("Would you like lowercase?")
+  var includeLowerChar = confirm("Would you like lowercase?") //asking to incluide lowercase click ok to confirm, ifo so it will be added to the PW generating 
   console.log(includeLowerChar)
 
-  var includeUpperChar = confirm("Would you like uppercase?")
+  var includeUpperChar = confirm("Would you like uppercase?")//asking to incluide uppercase click ok to confirm, ifo so it will be added to the PW generating 
 
-  var includeSpecialChar = confirm("Would you like spercial character?")
+  var includeSpecialChar = confirm("Would you like spercial character?")//asking to incluide special characters click ok to confirm, ifo so it will be added to the PW generating 
 
-  var includeNmber = confirm("Would you like numbers?")
+  var includeNmber = confirm("Would you like numbers?") //asking to incluide numbers click ok to confirm, ifo so it will be added to the PW generating 
 
   if (includeLowerChar) {
-    password += getRandom(lowercaseChar)
+    password += getRandom(lowercaseChar) //if they chose to add lowercase this will be combined with the password being created
     passwordOptions += lowercaseChar
   }
 
   if (includeUpperChar) {
-    password += getRandom(uppercaseChar)
+    password += getRandom(uppercaseChar) //if they chose to add uppercase this will be combined with the password being created
     passwordOptions += uppercaseChar
   }
   if (includeNmber) {
-    password += getRandom(numericalChar)
+    password += getRandom(numericalChar) //if they chose to add numbers this will be combined with the password being created
     passwordOptions += numericalChar
   }
   if (includeSpecialChar) {
-    password += getRandom(specialChar)
+    password += getRandom(specialChar) //if they chose to add special characters this will be combined with the password being created
     passwordOptions += specialChar
   }
 
