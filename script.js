@@ -47,24 +47,24 @@ function  generatePassword( ) {
     passwordOptions += specialChar
   }
 
-  for (let i = password.length; i < length; i++) {
+  for (let i = password.length; i < length; i++) { //this is looping through PW var string and adding a random character until its equals its length variable
     password += getRandom(passwordOptions)
   }
 
 
 
-  return password
+  return password//this will return the password
 }
 
 
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+  var passwordText = document.querySelector("#password");//query selector will select an element in the page with the ID of password and sets the value of that element to the generated PW
 
   passwordText.value = password;
 
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", writePassword);//this adds the event listener upon clicking 
